@@ -1,7 +1,7 @@
 # Welcome to the webhookLearning POC!
 
 ## Objective
-The intent of this POC is to learn how to implement Webhooks in an API.  Consider the following simple API resource with the following routes:
+The intent of this POC is to learn how to implement Webhooks in an API.  Consider the following simple and vanilla API resource with the following routes:
 
 `POST` `{{baseurl}}/api/v1/users`   
 
@@ -27,6 +27,11 @@ where `{{baseurl}}` is `localhost:3000`.
 3.  run `npm start` and your api should be running.   
 
 Using a tool like postman you can start hitting these routes above.  
+
+### What are webhooks?
+check out the following youtube video for what some insight to what we are trying to do here:
+https://www.youtube.com/watch?v=J7uENSm-w1g
+
 
 ## Now what?
 So API run off the idea of a client request data from a server.  Cosider the following meme:
