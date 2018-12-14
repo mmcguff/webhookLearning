@@ -23,7 +23,7 @@ where `{{baseurl}}` is `localhost:3000`.
 ## Getting Started
 
 1.  clone this repo and install using npm with `npm i`.  
-2.  run an instance of mongodb instance locally.  For those new to mongodb click (here)[https://www.hongkiat.com/blog/webdev-with-mongodb-part1/]
+2.  run an instance of mongodb instance locally.  For those new to mongodb click [here](https://www.hongkiat.com/blog/webdev-with-mongodb-part1/)
 3.  run `npm start` and your api should be running.   
 
 Using a tool like postman you can start hitting these routes above.  
