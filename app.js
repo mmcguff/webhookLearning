@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const users = require('./routes/users');
 
 const app = express();
 
@@ -9,6 +10,7 @@ mongoose.connect(uristring, { useCreateIndex: true, useNewUrlParser: true })
     .catch(err => console.log(`ERROR connecting to: ${uristring}.  ${err}`));
 
 app.use(express.json());
+app.use('/api/v1/users', users);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
