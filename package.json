@@ -1,0 +1,19 @@
+{
+  "name": "webhooklearning",
+  "version": "1.0.0",
+  "description": "This POC will provide an opportunity to study how to implement webhooks in a standard API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webhook",
+    "api"
+  ],
+  "author": "Matthew McGuff",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.14"
+  }
+}
