@@ -30,7 +30,7 @@ Using a tool like postman you can start hitting these routes above.
 
 ## Now what?
 So API run off the idea of a client request data from a server.  Cosider the following meme:
-![Are we there yet?](https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjQ3OGmhqDfAhWthOAKHVgzDVgQjRx6BAgBEAU&url=https%3A%2F%2Ficanhas.cheezburger.com%2Flolcats%2Ftag%2Fare-we-there-yet&psig=AOvVaw3uYtSljyNafkhOqxau6oq-&ust=1544901928170958)
+![Are we there yet?](https://i.chzbgr.com/full/6007067648/hA20BB206/)
 
 In use cases where you only need data from an API resouce this pattern of asking and recieving works fine but in use cases where you want to real time notifications of when your resouces has changed this patterns start to feel a little like the above.  It also puts a great tax on client and server resources.  
 
