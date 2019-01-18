@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {User, validate} = require('../models/user');
 const _ = require('lodash');
+const rp = require('request-promise');
 
 router.post('/', async (req, res) => {
     const { error } = validate(req.body); 
@@ -17,6 +18,18 @@ router.post('/', async (req, res) => {
 
 router.get('/', async (req, res) =>{
     const users = await User.find().select('-password');
+    
+    let options = {
+        method: 'GET',
+        uri: 'http://localhost:3001'
+    };
+
+    await rp(options)
+    .then(function (cb) {
+    })
+    .catch(function (err) {
+    });
+
     res.send(users);
 });
 
