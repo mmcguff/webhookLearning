@@ -3,6 +3,7 @@ const router = express.Router();
 const {User, validate} = require('../models/user');
 const _ = require('lodash');
 const rp = require('request-promise');
+const publishToSubscribers = require('./publishToSubscribers');
 
 router.post('/', async (req, res) => {
     const { error } = validate(req.body); 
@@ -13,24 +14,15 @@ router.post('/', async (req, res) => {
 
     user = new User(_.pick(req.body, ['username', 'password']));
     await user.save();  
-    res.send(_.pick(user, ['_id', 'username']));
+    user = _.pick(user, ['_id', 'username']);
+    res.send(user);
+    publishToSubscribers(user);
 });
 
 router.get('/', async (req, res) =>{
     const users = await User.find().select('-password');
-    
-    let options = {
-        method: 'GET',
-        uri: 'http://localhost:3001'
-    };
-
-    await rp(options)
-    .then(function (cb) {
-    })
-    .catch(function (err) {
-    });
-
     res.send(users);
+    publishToSubscribers(users);
 });
 
 router.get('/:id',  async (req, res) => {
@@ -40,6 +32,7 @@ router.get('/:id',  async (req, res) => {
     if (!user) return res.status(404).send('The user with the given ID was not found.');
 
     res.send(user);
+    publishToSubscribers(user);
 });
 
 router.put('/:id', async (req, res) => {
@@ -53,14 +46,15 @@ router.put('/:id', async (req, res) => {
     if (!user) return res.status(404).send('The user with the given ID was not found.');
     
     res.send(user);
+    publishToSubscribers(user);
   });
 
 router.delete('/:id', async (req, res) => {
     const user = await User.findByIdAndRemove(req.params.id).select('-password');
-  
     if (!user) return res.status(404).send('The user with the given ID was not found.');
   
     res.send(user);
+    publishToSubscribers(user);
   });
 
 module.exports = router;
